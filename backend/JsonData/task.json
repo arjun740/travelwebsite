@@ -1,0 +1,14 @@
+[{
+  "taskName": "Assignment 1",
+  "dueDate": "2024-03-15T23:59:59Z",
+  "additionalDetails": "Complete exercises 1-10",
+  "courseId": "65e83d576658e641f46c6ca6"
+},
+{
+"taskName": "Project",
+"dueDate": "2024-04-01T23:59:59Z",
+"additionalDetails": "Group project submission",
+"courseId": "65e83d576658e641f46c6ca6"
+}
+]
+

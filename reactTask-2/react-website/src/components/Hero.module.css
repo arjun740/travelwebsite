@@ -1,0 +1,91 @@
+.hero-container {
+    min-height: 100vh;
+    margin-top: 1px;
+    /*background: #A770EF; !* fallback for old browsers *!*/
+    /*background: -webkit-linear-gradient(to right, #FDB99B, #CF8BF3, #A770EF); !* Chrome 10-25, Safari 5.1-6 *!*/
+    /*background: linear-gradient(to right, #FDB99B, #CF8BF3, #A770EF);*/
+    display: grid;
+    gap: 40px;
+    justify-items: center;
+
+    align-items: center;
+    padding: 30px 80px;
+    height: 100%;
+    width: 100%;
+    /*background: url("./../assets/Himalayan.jpg") no-repeat center;*/
+    /*filter: blur(5px);*/
+    &::after {
+        content: "";
+        background: url("./../assets/Himalayan.jpg") no-repeat center;
+    background-size: cover;
+        filter: blur(5px);
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+    }
+}
+
+.textContainer{
+    margin-top: 30px;
+    min-width: 550px;
+    color:#e9ecef ;
+}
+.textContainer p{
+    color: white;
+    font-size: 18px;
+    padding-left: 18px;
+}
+.textContainer h1{
+    font-size: 45px;
+    font-weight: 600;
+    text-shadow: 1px 1px 2px black;
+    margin-bottom: 30px;
+}
+.subscribeContainer{
+    width: 450px;
+    line-height: 1px;
+    color:#e9ecef ;
+    text-shadow: 1px 1px 2px black;
+    justify-self: start;
+    margin-top: 20px;
+}
+.inputButton{
+    margin: 30px 0;
+    width: 100%;
+    height: 50px;
+    position: relative;
+
+}
+.inputButton button{
+    position: absolute;
+    height: 45px;
+    width: 30%;
+    background: #ffffff;
+    border: none;
+    border-radius: 40px;
+    box-shadow: 0 0 10px rgba(0,0,0,.1);
+    cursor: pointer;
+    font-size: 16px;
+    color: #333;
+    font-weight: 700;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+
+}
+.inputButton  input{
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    outline: none;
+    border: 2px solid rgba(255,255,255,.2);
+    border-radius: 40px;
+    color: #ffffff;
+    padding: 20px 45px 20px 20px;
+}
+.inputButton input::placeholder{
+     color: #ffffff;
+ }

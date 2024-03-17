@@ -1,0 +1,20 @@
+.contactWrapper {
+    padding: 40px 45px;
+    margin-top: 1px;
+    background: #A770EF;
+    background: -webkit-linear-gradient(to right, #FDB99B, #CF8BF3, #A770EF); /
+    background: linear-gradient(to right, #FDB99B, #CF8BF3, #A770EF);
+    display: grid;
+    grid-template-columns:  1fr 60%;
+}
+.contactTextContainer{
+    min-height: 100%;
+}
+.textWrapper{
+    height: 100%;
+    margin-top: 180px;
+    margin-left: 50px;
+}
+.textWrapper h1{
+    margin-bottom: 20px;
+}

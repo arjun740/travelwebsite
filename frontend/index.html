@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task Input</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f0f0f0;
+      }
+
+      .container {
+        max-width: 800px;
+        margin: 20px auto;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      h1,
+      h2 {
+        text-align: center;
+      }
+
+      .buttons {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 20px;
+      }
+
+      button {
+        padding: 10px 20px;
+        margin: 0 10px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      button:hover {
+        background-color: #0056b3;
+      }
+
+      form {
+        display: flex;
+        flex-direction: column;
+      }
+
+      label {
+        margin-bottom: 5px;
+      }
+
+      input,
+      textarea {
+        margin-bottom: 10px;
+        padding: 8px;
+        /* width: 100%; */
+        border-radius: 5px;
+        border: 1px solid #ccc;
+      }
+
+      button[type="submit"] {
+        align-self: flex-start;
+      }
+
+      .task-card {
+        background-color: #f9f9f9;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        padding: 10px;
+        margin-bottom: 10px;
+      }
+
+      .task-card h3 {
+        margin-top: 0;
+      }
+
+      .task-card p {
+        margin: 5px 0;
+      }
+      .task-card {
+        background-color: #f9f9f9;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        padding: 10px 15px;
+        margin-bottom: 10px;
+      }
+
+      .task-card h3 {
+        margin-top: 0;
+      }
+
+      .task-card p {
+        margin: 5px 0;
+      }
+
+      .task-card #taskList {
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+
+      .task-card #taskList .task-card {
+        margin-bottom: 10px;
+        border: none;
+        padding: 10px;
+        background-color: #f0f0f0;
+      }
+
+      .task-card #taskList .task-card h3 {
+        margin-bottom: 5px;
+      }
+
+      .task-card #taskList .task-card p {
+        margin: 2px 0;
+      }
+      .success-message {
+        position: fixed;
+        top: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 10px 20px;
+        background-color: #4caf50;
+        color: #fff;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      }
+      /* Select styles */
+      select {
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        padding: 8px;
+        width: 100%;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        background-color: #fff;
+        cursor: pointer;
+        margin-bottom: 8px;
+      }
+
+      /* Option styles */
+      select option {
+        padding: 8px;
+        background-color: #fff;
+        color: #333;
+      }
+
+      /* Hover state for options */
+      select option:hover {
+        background-color: #f0f0f0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Task Manager</h1>
+      <div class="buttons">
+        <button id="createCourseBtn">Create Course</button>
+        <button id="createTaskBtn">Create Task</button>
+        <button id="retrieveTasksBtn">Retrieve Tasks</button>
+      </div>
+      <div id="taskFormContainer" style="display: none">
+        <h2>Create New Task</h2>
+        <form id="taskForm">
+          <label for="courseID">Select Course ID:</label>
+          <select id="courseID" name="courseID" required>
+            <option value="">Select Course ID</option>
+            <!-- <option value="MATH202">MATH202</option>
+            <option value="PHYS101">PHYS101</option>
+            <option value="CSCI101">CSCI101</option> -->
+          </select>
+          <label for="taskName">Task Name:</label>
+          <input type="text" id="taskName" name="taskName" required />
+          <label for="dueDate">Due Date:</label>
+          <input type="date" id="dueDate" name="dueDate" required />
+          <label for="additionalDetails">Additional Details:</label>
+          <textarea id="additionalDetails" name="additionalDetails"></textarea>
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+      <div id="courseFormContainer" style="display: none">
+        <!-- Container for creating a new course -->
+        <h2>Create New Course</h2>
+        <form id="courseForm">
+          <label for="courseId">Course ID:</label>
+          <input type="text" id="courseId" name="courseId" required />
+          <label for="courseName">Course Name:</label>
+          <input type="text" id="courseName" name="courseName" required />
+          <label for="instructor">Instructor:</label>
+          <input type="text" id="instructor" name="instructor" required />
+          <label for="schedule">Schedule:</label>
+          <input type="text" id="schedule" name="schedule" required />
+          <label for="credits">Credits:</label>
+          <input type="number" id="credits" name="credits" required />
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+      <div id="taskListContainer" style="display: none">
+        <h2>Task List</h2>
+        <div id="taskList">
+          <div class="task-card">
+            <h3>Course ID: CS101</h3>
+            <p>Course Name: Introduction to Computer Science</p>
+            <p>Task Name: Homework 1</p>
+            <p>Due Date: 2023-03-08</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,26 @@
+[
+  {
+    "courseId": "CSCI101",
+    "courseName": "Introduction to Computer Science",
+    "instructor": "Dr. Smith",
+    "schedule": "Monday, Wednesday, Friday 10:00 AM - 11:30 AM",
+    "credits": 3,
+    "tasks": []
+  },
+  {
+    "courseId": "MATH202",
+    "courseName": "Calculus II",
+    "instructor": "Prof. Johnson",
+    "schedule": "Tuesday, Thursday 2:00 PM - 3:30 PM",
+    "credits": 4,
+    "tasks": []
+  },
+  {
+    "courseId": "PHYS101",
+    "courseName": "Physics I",
+    "instructor": "Dr. Brown",
+    "schedule": "Monday, Wednesday, Friday 1:00 PM - 2:30 PM",
+    "credits": 3,
+    "tasks": []
+  }
+]
